@@ -1,4 +1,19 @@
-# Apache Spark
+# Apache Spark (with CDH 5.3 support)
+
+> Picking up from github.com/laurencer/spark , Additions/Differences :
+> * Based on Spark 2.1.0 release branch
+> * Includes MLLib 
+> * Some conflicting jars are shaded
+>  
+> This fork of the Spark repository includes changes that mean that Spark
+> can be built to work with a CDH 5.3.8 cluster (which uses an outdated version
+> of Hive/Hadoop).
+>
+> To build a custom distribution run:
+>
+> `./dev/make-distribution.sh --name cdh5.3 --tgz -Psparkr -Pyarn -Phive -Phive-thriftserver -Pcdh-5.3.8 -Dhadoop.version=2.5.0 -DskipTests`
+>
+> NB. on a Mac you may have to set `JAVA_HOME` first (`export JAVA_HOME=$(/usr/libexec/java_home)`)
 
 Spark is a fast and general cluster computing system for Big Data. It provides
 high-level APIs in Scala, Java, Python, and R, and an optimized engine that
